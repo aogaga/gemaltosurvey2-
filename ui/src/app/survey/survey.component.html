@@ -1,0 +1,49 @@
+<div class="page-wrapper">
+  <header>
+    <nav class="navbar navbar-dark bg-primary">
+      <div class="container">
+        <nav class="navbar navbar-expand-lg navbar-light bg-primary">
+          <a class="navbar-brand" href="#"> Gemalto Survey</a>
+        </nav>
+      </div>
+    </nav>
+
+
+  </header>
+
+
+  <section class="main-content-area">
+    <div class="row">
+      <div class="col-sm-4" >
+        <div class="survey-form-wrapper">
+          <p>Form: status {{surveyForm.status}}</p>
+          <form [formGroup]="surveyForm" (ngSubmit)="onSubmit()">
+            <div class="form-group">
+              <label for="dateOfBirth">What is birth date ?</label>
+              <input  formControlName="dateOfBirth" type="date" class="form-control" id="dateOfBirth">
+
+              <small id="dobHelp" class="form-text text-muted">Enter your birth date, we might send you a bday shout out </small>
+            </div>
+
+
+            <button type="submit" class="btn btn-primary" [disabled]="!surveyForm.valid">Submit</button>
+          </form>
+        </div>
+      </div>
+
+      <div class="col-sm-6" >
+        <div class="survey-result-list">
+            <ul *ngIf="answers != null">
+              <li *ngFor="let item of answers; let i = index">
+                <small id="emailHelp" class="form-text text-muted">{{item.visitorIp}}</small>
+                {{item.answer}}
+              </li>
+            </ul>
+
+          <p *ngIf="answers === undefined || answers.length ==0"> No Survey answers to display</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</div>

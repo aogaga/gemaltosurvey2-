@@ -1,0 +1,22 @@
+/* You can add global styles to this file, and also import other style files */
+html, body{
+  font-family: 'Ubuntu', sans-serif;
+  font-size: 1em;
+}
+
+.main-content-area{
+  padding: 20px;
+}
+.survey-form-wrapper{
+  padding:20px 30px;
+}
+
+.survey-form-wrapper, .survey-result-list{
+  padding:40px 20px;
+}
+
+.survey-result-list ul > li{
+  list-style: none;
+  padding: 2em;
+  border-bottom: 1px solid whitesmoke;
+}
